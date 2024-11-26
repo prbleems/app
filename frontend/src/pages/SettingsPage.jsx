@@ -14,8 +14,8 @@ const SettingsPage = () => {
     <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
       <div className="space-y-6">
         <div className="flex flex-col gap-1">
-          <h2 className="text-lg font-semibold">Theme</h2>
-          <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
+          <h2 className="text-lg font-semibold">Tema</h2>
+          <p className="text-sm text-base-content/70">Elige un tema para tu interfaz de chat</p>
         </div>
 
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
@@ -96,8 +96,8 @@ const SettingsPage = () => {
                     <input
                       type="text"
                       className="input input-bordered flex-1 text-sm h-10"
-                      placeholder="Type a message..."
-                      value="This is a preview"
+                      placeholder="Escribe un mensaje..."
+                      value="Esto es una muestra"
                       readOnly
                     />
                     <button className="btn btn-primary h-10 min-h-0">

@@ -17,11 +17,11 @@ const SignUpPage = () => {
   const { signup, isSigningUp } = useAuthStore();
 
   const validateForm = () => {
-    if (!formData.fullName.trim()) return toast.error("Full name is required");
-    if (!formData.email.trim()) return toast.error("Email is required");
-    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Invalid email format");
-    if (!formData.password) return toast.error("Password is required");
-    if (formData.password.length < 6) return toast.error("Password must be at least 6 characters");
+    if (!formData.fullName.trim()) return toast.error("Se requiere el nombre completo");
+    if (!formData.email.trim()) return toast.error("Correo electrónico obligatorio");
+    if (!/\S+@\S+\.\S+/.test(formData.email)) return toast.error("Formato de correo electrónico no válido");
+    if (!formData.password) return toast.error("Se requiere contraseña");
+    if (formData.password.length < 6) return toast.error("La contraseña debe tener al menos 6 caracteres");
 
     return true;
   };
@@ -48,15 +48,15 @@ const SignUpPage = () => {
               >
                 <MessageSquare className="size-6 text-primary" />
               </div>
-              <h1 className="text-2xl font-bold mt-2">Create Account</h1>
-              <p className="text-base-content/60">Get started with your free account</p>
+              <h1 className="text-2xl font-bold mt-2">Crear cuenta</h1>
+              <p className="text-base-content/60">Comience con su cuenta gratuita</p>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Full Name</span>
+                <span className="label-text font-medium">Nombre y apellidos</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -83,7 +83,7 @@ const SignUpPage = () => {
                 <input
                   type="email"
                   className={`input input-bordered w-full pl-10`}
-                  placeholder="you@example.com"
+                  placeholder="tu@ejemplo.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 />
@@ -92,7 +92,7 @@ const SignUpPage = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text font-medium">Password</span>
+                <span className="label-text font-medium">Contraseña</span>
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -123,19 +123,19 @@ const SignUpPage = () => {
               {isSigningUp ? (
                 <>
                   <Loader2 className="size-5 animate-spin" />
-                  Loading...
+                  Cargando...
                 </>
               ) : (
-                "Create Account"
+                "Crear cuenta"
               )}
             </button>
           </form>
 
           <div className="text-center">
             <p className="text-base-content/60">
-              Already have an account?{" "}
+              ¿Ya tiene una cuenta?{" "}
               <Link to="/login" className="link link-primary">
-                Sign in
+              Iniciar sesión
               </Link>
             </p>
           </div>
@@ -145,8 +145,8 @@ const SignUpPage = () => {
       {/* right side */}
 
       <AuthImagePattern
-        title="Join our community"
-        subtitle="Connect with friends, share moments, and stay in touch with your loved ones."
+        title="Entra al Chat Empresarial de AjaxHorizon"
+        subtitle="Conecta con tus compañeros de trabajo y charla con ellos."
       />
     </div>
   );

@@ -43,7 +43,7 @@ const MessageInput = () => {
       setImagePreview(null);
       if (fileInputRef.current) fileInputRef.current.value = "";
     } catch (error) {
-      console.error("Failed to send message:", error);
+      console.error("Error al enviar el mensaje:", error);
     }
   };
 
@@ -54,7 +54,7 @@ const MessageInput = () => {
           <div className="relative">
             <img
               src={imagePreview}
-              alt="Preview"
+              alt="Vista previa"
               className="w-20 h-20 object-cover rounded-lg border border-zinc-700"
             />
             <button
@@ -74,7 +74,7 @@ const MessageInput = () => {
           <input
             type="text"
             className="w-full input input-bordered rounded-lg input-sm sm:input-md"
-            placeholder="Type a message..."
+            placeholder="Escribe un mensaje..."
             value={text}
             onChange={(e) => setText(e.target.value)}
           />
